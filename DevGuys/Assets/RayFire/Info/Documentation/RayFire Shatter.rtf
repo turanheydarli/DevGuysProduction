@@ -1,0 +1,207 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fswiss\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\nowidctlpar\sl276\slmult1\lang1033\f0\fs24\par
+\pard\nowidctlpar\sl276\slmult1\qc\lang9\ul\b\fs52 RayFire Shatter\lang1033\ulnone\b0\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\fs22 It's main purpose is \b Prefragmentation \b0 in Editor mode. For now it provides 7 fragmentation types: \b Voronoi\b0 , \b Splinters, Slabs, Radial, Custom, Slices\b0  and \b Tetrahedron \b0 based fragmentation.\lang1033\fs24\par
+\par
+\lang9\b\fs32\tab\lang1033\i\fs48 Fragments \b0\i0\fs24\par
+\par
+\lang9\b\fs22 Fragment Type\lang1033\b0 : Defines fragmentation type for object.\fs24\par
+\pard\nowidctlpar\li720\sl276\slmult1\tx720\f1\'b7\tab\b\f0\fs22 Voronoi\b0 : Low poly, convex, physic s friendly fragments.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Splinters\b0 : Low poly, convex, physics friendly fragments, stretched along one axis.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Slabs\b0 : Low poly, convex, physics friendly fragments, stretched along two axes.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Radial\b0 : Low poly, convex, physics friendly fragments, creates radial fragments pattern.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Custom\b0 : Low poly, convex, physics friendly fragments, allows to use custom point cloud for fragments distribution.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Slice\b0 : Slice object by planes.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Tets\b0 : Tetrahedron based fragments, this type is mostly useless as is and should be used with Gluing, in this case it creates high poly concave fragments.\fs24\par
+\f1\'b7\tab\b\f0\fs22 Decompose\b0 : Detach every element (separated surface which is not connected with the rest of surface) into separate fragment.\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\b\i\fs44 Voronoi\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=qJ6NVrB1SNk"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=qJ6NVrB1SNk}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Amount\lang1033\b0 : Defines amount of points in point cloud, every point represent rough center of  fragment.\fs24\par
+\par
+\b\fs22 Center Bias\b0 : Defines offset of points in point cloud towards \b Center\b0 . Using high value it is possible to create more tiny fragments closer to \b Center \b0 and less bigger fragments far from it.\fs24\par
+\par
+\par
+\lang9\b\i\fs44 Splinters\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=GyqYus7mH78"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=GyqYus7mH78}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Axis\lang1033\b0 : Fragments will be stretched over defined axis.\lang9\b\par
+\par
+Amount\lang1033\b0 : Defines amount of points in point cloud, every point represent rough center of  fragment.\fs24\par
+\par
+\lang9\b\fs22 Strength\lang1033\b0 : Defines sharpness of stretched fragments.\fs24\par
+\par
+\b\fs22 Center Bias\b0 : Defines offset of points in point cloud towards \b Center\b0 . Using high value it is possible to create more tiny fragments closer to \b Center \b0 and less bigger fragments far from it.\fs24\par
+\par
+\par
+\lang9\b\i\fs44 Slabs\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=GlZl93WvzHs"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=GlZl93WvzHs}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Axis\lang1033\b0 : Fragments will be stretched over defined axis.\lang9\b\par
+\par
+Amount\lang1033\b0 : Defines amount of points in point cloud, every point represent rough center of  fragment.\fs24\par
+\par
+\lang9\b\fs22 Strength\lang1033\b0 : Defines sharpness of stretched slabs.\fs24\par
+\par
+\b\fs22 Center Bias\b0 : Defines offset of points in point cloud towards \b Center\b0 . Using high value it is possible to create more tiny fragments closer to \b Center \b0 and less bigger fragments far from it.\fs24\par
+\par
+\lang9\b\fs32\tab\lang1033\b0\fs24\par
+\lang9\b\i\fs44 Radial\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=6uE5YuXBnaI"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=6uE5YuXBnaI}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Radius\lang1033\b0 : Radius of radial fragmentation type.\fs24\par
+\par
+\b\fs22 Divergence\b0 : Radial type creates point cloud which creates Voronoi fragments. Divergence property defines random offset for points in this point cloud. High divergence provides more chaotic fragments.\fs24\par
+\par
+\lang9\b\fs22 Restrict\lang1033\b0 : Divergence offset points in all directions. If Restrict property is On points will be restricted to plane.\fs24\par
+\par
+\lang9\b\fs22 Rings\lang1033\b0 : Defines amount of Rings.\fs24\par
+\par
+\b\fs22 Focus\b0 : Defines bias to center for rings.\fs24\par
+\par
+\lang9\b\fs22 Focus Str\lang1033\b0 : Defines Focus bias strength.\fs24\par
+\par
+\lang9\b\fs22 Random Rings\lang1033\b0 : Add random offset to rings position.\fs24\par
+\par
+\b\fs22 Rays\b0 : Defines amount of Rays.\fs24\par
+\par
+\lang9\b\fs22 Random Rays\lang1033\b0 : Add random offset to rings direction.\fs24\par
+\par
+\lang9\b\fs22 Twist\lang1033\b0 : Add rotation to rings relative to center.\fs24\par
+\par
+\lang9\b\fs32\tab\lang1033\b0\fs24\par
+\lang9\b\i\fs44 Custom\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=4TuIgnkczag"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=4TuIgnkczag}}}\lang1033\b0\f0\fs24\par
+\par
+\b\fs28\tab\i Point Cloud\b0\i0\fs24\par
+\par
+\lang9\b\fs22 Source\lang1033\b0 : Defines source of custom point cloud for fragments distribution\fs24\par
+\pard\nowidctlpar\li720\sl276\slmult1\tx720\f1\'b7\tab\lang9\b\f0\fs22 Children Transform\lang1033\b0 : Every child object position represents one point in point cloud.\fs24\par
+\f1\'b7\tab\lang9\b\f0\fs22 Transform Array\lang1033\b0 : Array of object's transforms.\fs24\par
+\f1\'b7\tab\lang9\b\f0\fs22 Vector3 Array\lang1033\b0 : Array of Point 3 coordinates.\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\b\fs22 Use As\lang1033\b0 : Defines source of custom point cloud for fragments distribution\fs24\par
+\pard\nowidctlpar\li720\sl276\slmult1\tx720\f1\'b7\tab\lang9\b\f0\fs22 Volume Points\lang1033\b0 : Every point offspring additional points around so total amount of points in cloud will be equal to Amount property in Volume group.\fs24\par
+\f1\'b7\tab\lang9\b\f0\fs22 Point Cloud\lang1033\b0 : Every point cloud is used as approximate center for fragment.\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\b\fs28\tab\i Volume\b0\i0\fs24\par
+\par
+\b\fs22 Amount\b0 : Total amount of points in point cloud if Use As set to Volume Points .\fs24\par
+\b\fs22 Radius\b0 : Every Volume point generates  new points around it in defined Radius.\b\fs28\tab\b0\fs24\par
+\b\fs28\tab\b0\fs24\par
+\b\fs28\tab\i Preview\b0\i0\fs24\par
+\par
+\b\fs22 Enable\b0 : Show point cloud in viewport.\fs24\par
+\b\fs22 Size\b0 : Size of preview point.\fs24\par
+\par
+\b\fs28\tab\i Arrays\b0\i0\fs24\par
+\par
+\b\fs22 Transforms\b0 : Array of object transforms in case Source set to Transform Array.\fs24\par
+\b\fs22 Vector 3\b0 : Array of global Vector 3 coordinates in case Source set to Vector3 Array.\fs24\par
+\par
+\lang9\b\i\fs44 Slice\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://youtu.be/JUcQtUGCuRU"}}{\fldrslt{\ul\cf1 https://youtu.be/JUcQtUGCuRU}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Plane\lang1033\b0 : Defines slicing plane by two axes.\fs24\par
+\par
+\b\fs22 Slice List\b0 : List with transforms for slice planes.\fs24\par
+\par
+\lang9\b\fs32\tab\lang1033\b0\fs24\par
+\lang9\b\i\fs44 Tets\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://youtu.be/QKkBr5l0p88"}}{\fldrslt{\ul\cf1 https://youtu.be/QKkBr5l0p88}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Density\lang1033\b0 : Defines density of tetrahedron cage. \fs24\par
+\par
+\b\fs22 Noise\b0 : Add noise for tetrahedrons\fs24\par
+\par
+\lang9\b\fs22 Mult\lang1033\b0 : Multiplier for \b Density\b0 .\fs24\par
+\par
+\fs28\tab\fs24\par
+\b\i\fs48\tab Properties\b0\i0\fs24\par
+\par
+\lang9\b\fs22 Mode\b0 : Defines fragmentation mode.\lang1033\fs24\par
+\pard\nowidctlpar\li720\sl276\slmult1\tx720\f1\'b7\tab\lang9\b\f0\fs22 Runtime\lang1033\b0 : Can be used to test if object can be fragmented in Runtime by Rigid component. Optimized for Runtime fragmentation. Sensitive to input mesh topology. Object won't be fragmented if mesh has open edges (not closed volume), not welded vertices or double faces. Meshes with such issues if fragmented will produce fragments with the same issues and attempt to generate convex hull for collider or simulate such object may show error and in some rare cases even crash Unity engine. To prevent this all meshes with such meshes will show Bad Mesh warning and will not be fragmented.\fs24\par
+\f1\'b7\tab\lang9\b\f0\fs22 Editor\lang1033\b0 : Should be used in Editor for prefragmentation. Not sensitive to input mesh and can fragment meshes with open edges and other issues but will provide fragments with the same issues. In this case such fragments can be tested in Editor and refragmented if there are any simulation issues detected. Also provides advanced properties which allows to automatically fix some issues like capping open edges. Takes more time then Runtime mode for fragmentation because of additional mesh checks and fixes.\fs24\par
+\pard\nowidctlpar\li360\sl276\slmult1\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\b\i\fs44 Material\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=fMPGXiLJDo0"}}{\fldrslt{\ul\cf1 https://www.youtube.com/watch?v=fMPGXiLJDo0}}}\lang1033\b0\f0\fs24\par
+\par
+\lang9\b\fs22 Inner material\b0 : \lang1033 Allows to define material for fragment's inner surface. If not applied RayFire will use original object material for inner surface.\fs24\par
+\par
+\pard\nowidctlpar\li360\sl276\slmult1\lang9\b\fs22 Mapping Scale\b0 : \lang1033 Defines mapping scale for inner surface. Using this property you can increase or decrease size of texture for inner surface.\fs24\par
+\par
+\pard\nowidctlpar\sl276\slmult1\lang9\b\i\fs44 Clusters\lang1033\b0\i0\fs24\par
+\lang9\b\fs32{\field{\*\fldinst{HYPERLINK "https://youtu.be/bfbwp4GF4dM"}}{\fldrslt{\ul\cf1 https://youtu.be/bfbwp4GF4dM}}}\lang1033\b0\f0\fs24\par
+\par
+\pard\nowidctlpar\li720\sl276\slmult1\lang9\fs44 Main\lang1033\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\b\fs22 Enable\b0 : \lang1033 Allows to glue groups of fragments into single mesh by deleting shared faces.\fs24\par
+\par
+\lang9\b\fs22 Count\b0 : \lang1033 Defines total amount of glued groups.\fs24\par
+\par
+\lang9\b\fs22 Seed\b0 : \lang1033 Seed for random parameters.\fs24\par
+\pard\nowidctlpar\li360\sl276\slmult1\par
+\pard\nowidctlpar\sl276\slmult1\lang9\b\fs22 Relax\b0 : Allows to smooth inner surface.\lang1033\fs24\par
+\par
+\lang9\fs44\tab Debris\lang1033\fs24\par
+\par
+\lang9\b\fs22 Amount\b0 : \lang1033 Defines amount of solo fragments which will not be part of cluster over the group edges. Measured in percents, 100% means that all fragments at the edges of group will not be glued and will stay as is. using this property you can create several complex glued clusters and and small solo fragments (debris) at their surface to create more natural looking demolitions.\fs24\par
+\par
+\lang9\b\fs22 Layers\b0 : \lang1033 Allows to add more layers of debris.\fs24\par
+\par
+\lang9\b\fs22 Scale\b0 : \lang1033 Add random scale variation for debris from 0 to 1. Useful to create small debris crumbling effect.\fs24\par
+\pard\nowidctlpar\li360\sl276\slmult1\par
+\pard\nowidctlpar\sl276\slmult1\lang9\b\fs22 Min/Max\b0 : Allows to glue debris together to create just like main clusters, but with amount of fragments defined by Min/Max range.\lang1033\fs24\par
+\par
+\lang9\b\i\fs44 Advanced\lang1033\b0\i0\fs24\par
+\par
+\lang9\fs44\tab Common\lang1033\fs24\par
+\par
+\lang9\b\fs22 Seed\lang1033\b0 : Seed for all random parameters.\fs24\par
+\par
+\lang9\b\fs22 Decompose\lang1033\b0 : Decompose fragments to several meshes by connectivity of the original mesh.\fs24\par
+\par
+\b\fs22 Remove Collinear\b0 : Copy.\fs24\par
+\pard\nowidctlpar\sl276\slmult1\tx8662\par
+\pard\nowidctlpar\sl276\slmult1\b\fs22 Copy Components\b0 : Copy components from fragmented object to fragments.\fs24\par
+\pard\nowidctlpar\li360\sl276\slmult1\par
+\pard\nowidctlpar\sl276\slmult1\lang9\fs44\tab Editor Mode\lang1033\fs24\par
+\par
+\lang9\b\fs22 Input Precap\b0 : Attempt to close all open edges of input mesh to create closed volume. Otherwise only surface will be cut and fragments won't have closed volume as well.\lang1033\fs24\par
+\par
+\lang9\b\fs22 Output Precap\b0 : Attempt to close all open edges of output fragment mesh.\lang1033\fs24\par
+\par
+\lang9\b\fs22 Remove Double Faces\b0 : Attempt to delete all double faces except one for input mesh.\lang1033\fs24\par
+\par
+\lang9\b\fs22 Exclude Inner Fragments\b0 : Do not create fragments which are completely inside of fragmented object and can not be seen until demolition and create only fragments that has part of original object surface.\lang1033\fs24\par
+\par
+\lang9\fs44\tab Limitations\lang1033\fs24\par
+\par
+\lang9\b\fs22 Vertex Limitatition\b0 : Allows to fragment again all new ffragments with amount of vertices higher than defined Vertex Amount value.\lang1033\fs24\par
+\par
+\lang9\b\fs22 Vertex Amount\b0 : Defines maximum amount of vertices for fragment.\lang1033\fs24\par
+\par
+\b\i\fs48\tab Export to Asset\par
+\i0\fs32{\field{\*\fldinst{HYPERLINK "https://youtu.be/pQcN2FFfwy4"}}{\fldrslt{\ul\cf1 https://youtu.be/pQcN2FFfwy4}}}\f0\fs32\par
+{\field{\*\fldinst{HYPERLINK "https://youtu.be/lKPi6mt6yRI"}}{\fldrslt{\ul\cf1 https://youtu.be/lKPi6mt6yRI}}}\b0\f0\fs24\par
+\par
+\lang9\fs44 Export\lang1033\fs24\par
+\par
+\lang9\b\fs22 Source\b0 : \lang1033 Source of meshes to export. After fragmentation all new meshes stored in scene, while meshes stored in scene you can not create prefab with fragments because in prefab these meshes won't be reference to any asset. In order to save fragments as prefab you need to have fragments meshes stored as asset and referenced to this asset. Using Export feature you can create Unity Asset with meshes and automatically reference all fragment's meshes to this asset.\fs24\par
+\pard\nowidctlpar\li720\sl276\slmult1\tx720\f1\'b7\tab\lang9\b\f0\fs22 Last Fragments\lang1033\b0 : Export last fragmented objects to Unity Asset.\fs24\par
+\f1\'b7\tab\lang9\b\f0\fs22 Children\lang1033\b0 : Export children meshes to Unity Asset.\fs24\par
+\pard\nowidctlpar\sl276\slmult1\par
+\lang9\b\fs22 Suffix\b0 : \lang1033 Add text suffix to asset name before save it as asset.\fs24\par
+\par
+\b\i\fs48\tab Center\b0\i0\fs24\par
+\par
+\lang9\b\fs22 Show\b0 : \lang1033 Show move helper to define center for fragmentation bias and for center and direction of radial fragmentation. To use it set Hand Tool and then move it as you use Move tool.\fs24\par
+\par
+\lang9\b\fs22 Reset\b0 : Reset Center to it's default position\lang1033 .\fs24\par
+\pard\nowidctlpar\li360\sl276\slmult1\par
+}
+ 
