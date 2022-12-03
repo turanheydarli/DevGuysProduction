@@ -32,9 +32,11 @@ namespace Code.Scripts.Game
             _photonView = GetComponent<PhotonView>();
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody>();
+            
             _allPlayers = FindObjectsOfType<PlayerController>();
 
-            playerName.text = PhotonNetwork.LocalPlayer.NickName;
+            playerName.text = _photonView.Owner.NickName;
+           
         }
 
         private void Update()
@@ -84,7 +86,7 @@ namespace Code.Scripts.Game
                 _direction = new Vector3(0, 0, 0);
                 _animator.SetFloat($"Running", _direction.magnitude);
                 _gameEnded = true;
-                GameUIManager.Instance.OpenEndMenu(PhotonNetwork.LocalPlayer.NickName, _leaderboard.IndexOf(onPath.z) + 1);
+                GameUIManager.Instance.OpenEndMenu(_photonView.Owner.NickName, _leaderboard.IndexOf(onPath.z) + 1);
             }
         }
     }

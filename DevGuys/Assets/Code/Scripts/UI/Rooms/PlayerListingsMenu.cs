@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Code.Scripts.UI.Rooms
@@ -84,10 +86,26 @@ namespace Code.Scripts.UI.Rooms
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                PhotonNetwork.LoadLevel(1);
+                SceneManager.LoadScene(1);
+                //PhotonNetwork.LoadLevel(1);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
             }
         }
+
+        // IEnumerator MoveToGameScene()
+        // {
+        //     PhotonNetwork.IsMessageQueueRunning = false;
+        //     
+        //     PhotonNetwork.LoadLevel(1);
+        //     PhotonNetwork.CurrentRoom.IsOpen = false;
+        //     PhotonNetwork.CurrentRoom.IsVisible = false;
+        //     
+        //     while(newSceneDidNotFinishLoading)
+        //     {
+        //         yield return null;
+        //     }
+        //     PhotonNetwork.IsMessageQueueRunning = true;
+        // }
     }
 }
