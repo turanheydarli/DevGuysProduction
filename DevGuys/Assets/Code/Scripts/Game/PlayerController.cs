@@ -14,12 +14,12 @@ namespace Code.Scripts.Game
         private Animator _animator;
         private Collider[] _colliders;
         private float _nextCollectTime;
-        private PhotonView _photonView;
+        public PhotonView _photonView;
 
         public Vector3 onPath;
 
         [SerializeField] PlayerController[] _allPlayers;
-        [SerializeField] private List<float> _leaderboard;
+        [SerializeField] public List<float> _leaderboard;
 
         [SerializeField] float turnSmoothVelocity;
         [SerializeField] float smoothTurnTime = 0.01f;
@@ -81,12 +81,12 @@ namespace Code.Scripts.Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("End"))
+            if (other.CompareTag("Finish"))
             {
                 _direction = new Vector3(0, 0, 0);
                 _animator.SetFloat($"Running", _direction.magnitude);
                 _gameEnded = true;
-                GameUIManager.Instance.OpenEndMenu(_photonView.Owner.NickName, _leaderboard.IndexOf(onPath.z) + 1);
+
             }
         }
     }

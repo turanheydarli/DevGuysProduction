@@ -2237,7 +2237,7 @@ GameObject:
   - component: {fileID: 2432590432411670190}
   m_Layer: 8
   m_Name: karakter_erkek_Idle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2325,6 +2325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a578a4feba286b5489e2063c5f7d6a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _photonView: {fileID: 0}
   onPath: {x: 0, y: 0, z: 0}
   _allPlayers: []
   _leaderboard: []
@@ -3264,7 +3265,7 @@ GameObject:
   - component: {fileID: 4158023172089890524}
   m_Layer: 0
   m_Name: TurtleGuy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
