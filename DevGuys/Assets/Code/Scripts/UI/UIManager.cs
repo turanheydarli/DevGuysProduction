@@ -24,7 +24,7 @@ namespace Code.Scripts.UI
 
         [Header("Login/Register")] [SerializeField]
         private GameObject loginPopup;
-
+        [SerializeField] private GameObject enterUsernamePopup;
         [SerializeField] private GameObject loginErrorPopup;
         [SerializeField] private TMP_Text loginErrorMessageText;
 
@@ -33,8 +33,15 @@ namespace Code.Scripts.UI
         [SerializeField] private TMP_Text registerFormPassword;
 
 
-
-
+        public void ShowEnterUsernamePanel()
+        {
+            enterUsernamePopup.SetActive(true);
+        }
+        public void CloseEnterUsernamePanel()
+        {
+            enterUsernamePopup.SetActive(false);
+        }
+        
         public void ShowLoadingPanel()
         {
             loadingPanel.SetActive(true);

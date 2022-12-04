@@ -1,8 +1,7 @@
-using System.Collections;
 using Code.Scripts.Game;
-using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
@@ -36,13 +35,10 @@ public class GameUIManager : MonoBehaviour
         leadboardListingMenu.AddUserToLeadboard(username, position);
 
         goBackLobbyButton.SetActive(true);
-
     }
 
     public void GoBackLobby()
     {
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
-    
 }

@@ -11,11 +11,11 @@ namespace Code.Scripts
     {
         [Header("Login")] [SerializeField] private TMP_Text loginFormUsername;
         [SerializeField] private TMP_Text loginFormPassword;
+        [SerializeField] private TMP_Text enterUsername;
 
         void Start()
         {
             PlayerPrefs.SetString("username", null);
-            PlayerPrefs.SetString("password", null);
             StartGame();
         }
 
@@ -25,9 +25,10 @@ namespace Code.Scripts
 
             string username = PlayerPrefs.GetString("username", null);
             string password = PlayerPrefs.GetString("password", null);
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username))
             {
-                UIManager.Instance.ShowLoginPanel();
+                // UIManager.Instance.ShowLoginPanel();
+                UIManager.Instance.ShowEnterUsernamePanel();
             }
             else
             {
@@ -37,16 +38,16 @@ namespace Code.Scripts
                 PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
                 PhotonNetwork.NickName = username;
 
-                AuthenticationValues authValues = new AuthenticationValues
-                {
-                    AuthType = CustomAuthenticationType.Custom
-                };
-
-                authValues.AddAuthParameter("username", username);
-                authValues.AddAuthParameter("password", password);
-
-                authValues.AuthGetParameters = authValues.AuthGetParameters;
-                PhotonNetwork.AuthValues = authValues;
+                // AuthenticationValues authValues = new AuthenticationValues
+                // {
+                //     AuthType = CustomAuthenticationType.Custom
+                // };
+                //
+                // authValues.AddAuthParameter("username", username);
+                // authValues.AddAuthParameter("password", password);
+                //
+                // authValues.AuthGetParameters = authValues.AuthGetParameters;
+                // PhotonNetwork.AuthValues = authValues;
 
                 PhotonNetwork.ConnectUsingSettings();
             }
@@ -57,6 +58,13 @@ namespace Code.Scripts
             UIManager.Instance.CloseLoginPanel();
             PlayerPrefs.SetString("username", loginFormUsername.text);
             PlayerPrefs.SetString("password", loginFormPassword.text);
+            StartGame();
+        }
+
+        public void OnClickStartButton()
+        {
+            UIManager.Instance.CloseEnterUsernamePanel();
+            PlayerPrefs.SetString("username", enterUsername.text);
             StartGame();
         }
 

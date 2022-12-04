@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Photon.Pun;
 using TMPro;
@@ -11,6 +12,11 @@ namespace Code.Scripts.UI.Lobby
 
 
         [SerializeField] private GameObject roomListingsMenu;
+
+        public override void OnJoinedLobby()
+        {
+            usernameText.text = PhotonNetwork.NickName;
+        }
 
         public void OnClickPlayButton()
         {
