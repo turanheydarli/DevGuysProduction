@@ -49,7 +49,7 @@ namespace Code.Scripts.Game
             //Debug.Log(position);
 
             string suffix = position == 1 ? "st" : position == 2 ? "nd" : position == 3 ? "rd" : "th";
-           // GameUIManager.Instance.SetPositionInfo(position + suffix);
+            GameUIManager.Instance.SetPositionInfo(position + suffix);
         }
 
         void FixedUpdate()
