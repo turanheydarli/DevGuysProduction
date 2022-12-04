@@ -1,4 +1,6 @@
+using System.Collections;
 using Code.Scripts.Game;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,8 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] private GameObject generalPanel;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private Image endPanelSlider;
+
+    [SerializeField] private GameObject goBackLobbyButton;
 
 
     public static GameUIManager Instance;
@@ -30,5 +34,15 @@ public class GameUIManager : MonoBehaviour
         generalPanel.SetActive(false);
         endPanel.SetActive(true);
         leadboardListingMenu.AddUserToLeadboard(username, position);
+
+        goBackLobbyButton.SetActive(true);
+
     }
+
+    public void GoBackLobby()
+    {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LoadLevel(0);
+    }
+    
 }

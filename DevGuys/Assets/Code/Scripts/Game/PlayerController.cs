@@ -14,29 +14,33 @@ namespace Code.Scripts.Game
         private Animator _animator;
         private Collider[] _colliders;
         private float _nextCollectTime;
-        public PhotonView _photonView;
 
+        public PhotonView photonView;
         public Vector3 onPath;
 
-        [SerializeField] PlayerController[] _allPlayers;
+        [SerializeField] private PlayerController[] _allPlayers;
+        [SerializeField] private Camera _mainCamera;
+
         [SerializeField] public List<float> _leaderboard;
 
         [SerializeField] float turnSmoothVelocity;
         [SerializeField] float smoothTurnTime = 0.01f;
         [SerializeField] private float movementSpeed = 10;
 
+        [SerializeField] private Transform _playerNameTransform;
         [SerializeField] public TMP_Text playerName;
 
         void Start()
         {
-            _photonView = GetComponent<PhotonView>();
+            photonView = GetComponent<PhotonView>();
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody>();
-            
+
             _allPlayers = FindObjectsOfType<PlayerController>();
 
-            playerName.text = _photonView.Owner.NickName;
-           
+            playerName.text = photonView.Owner.NickName;
+
+            _mainCamera = Camera.main;
         }
 
         private void Update()
@@ -46,7 +50,6 @@ namespace Code.Scripts.Game
             _leaderboard.Sort();
 
             int position = _leaderboard.IndexOf(onPath.z) + 1;
-            //Debug.Log(position);
 
             string suffix = position == 1 ? "st" : position == 2 ? "nd" : position == 3 ? "rd" : "th";
             GameUIManager.Instance.SetPositionInfo(position + suffix);
@@ -54,7 +57,9 @@ namespace Code.Scripts.Game
 
         void FixedUpdate()
         {
-            if (_photonView.IsMine && !_gameEnded)
+            _playerNameTransform.LookAt(_mainCamera.transform);
+
+            if (photonView.IsMine && !_gameEnded)
             {
                 Move();
             }
@@ -86,7 +91,6 @@ namespace Code.Scripts.Game
                 _direction = new Vector3(0, 0, 0);
                 _animator.SetFloat($"Running", _direction.magnitude);
                 _gameEnded = true;
-
             }
         }
     }
