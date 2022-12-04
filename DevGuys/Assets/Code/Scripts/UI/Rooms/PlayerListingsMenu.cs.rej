@@ -1,0 +1,12 @@
+diff a/DevGuys/Assets/Code/Scripts/UI/Rooms/PlayerListingsMenu.cs b/DevGuys/Assets/Code/Scripts/UI/Rooms/PlayerListingsMenu.cs	(rejected hunks)
+@@ -86,8 +86,8 @@
+         {
+             if (PhotonNetwork.IsMasterClient)
+             {
+-                SceneManager.LoadScene(1);
+-                //PhotonNetwork.LoadLevel(1);
++               // SceneManager.LoadScene(1);
++                PhotonNetwork.LoadLevel(1);
+                 PhotonNetwork.CurrentRoom.IsOpen = false;
+                 PhotonNetwork.CurrentRoom.IsVisible = false;
+             }
