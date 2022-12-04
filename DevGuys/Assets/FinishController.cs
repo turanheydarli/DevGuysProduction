@@ -9,6 +9,7 @@ public class FinishController : MonoBehaviour
 {
     [SerializeField] private Transform rayTrans;
     [SerializeField] LayerMask layer;
+    int winnerCount = 0;
     void Start()
     {
         
@@ -24,10 +25,11 @@ public class FinishController : MonoBehaviour
             Debug.DrawRay(rayTrans.position, rayTrans.forward*100f, Color.green);
             if (hit.transform.CompareTag("Player"))
             {
+                winnerCount++;
                 Debug.Log(hit.transform.name);
                 PlayerController player = hit.transform.GetComponent<PlayerController>();
                 hit.transform.tag = "End";
-                GameUIManager.Instance.OpenEndMenu(player._photonView.Owner.NickName, player._leaderboard.IndexOf(player.onPath.z) + 1);
+                GameUIManager.Instance.OpenEndMenu(player._photonView.Owner.NickName,winnerCount);
             }
         }
         
