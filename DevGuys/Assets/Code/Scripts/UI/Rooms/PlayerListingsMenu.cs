@@ -86,11 +86,7 @@ namespace Code.Scripts.UI.Rooms
         {
             if (PhotonNetwork.IsMasterClient)
             {
-<<<<<<< HEAD
-                // SceneManager.LoadScene(1);
-=======
-               // SceneManager.LoadScene(1);
->>>>>>> origin/development
+
                 PhotonNetwork.LoadLevel(1);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
